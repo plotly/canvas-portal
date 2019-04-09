@@ -21,13 +21,13 @@ app = dash.Dash(__name__)
 server = app.server
 app.config.suppress_callback_exceptions = True
 # Image to segment and shape parameters
-import os
-print("current directory is", os.getcwd())
-print(os.listdir('.'))
 
-filename = "assets/dress.jpg"
-#filename = "/app/apps/remove-background/assets/dress.jpg"
-img_app3 = io.imread(filename)
+filename = "/app/apps/remove-background/assets/dress.jpg"
+try:
+    img_app3 = io.imread(filename)
+except FileNotFoundError:
+    filename = "assets/dress.jpg"
+    img_app3 = io.imread(filename)
 height, width, _ = img_app3.shape
 canvas_width = 500
 canvas_height = round(height * canvas_width / width)
