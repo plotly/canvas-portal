@@ -61,6 +61,18 @@ app.layout = html.Div([
             image_upload_zone('upload-image-bg'),
         ], className="seven columns"),
         html.Div([
+            html.Img(src='https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png', width='30px'),
+            html.A(
+              id='gh-link',
+              children=[
+                  'View on GitHub'],
+              href="http://github.com/plotly/canvas-portal/"
+                          "blob/master/apps/remove-background/app.py",
+              style={'color': 'black',
+                    'border':'solid 1px black',
+                    'float':'left'}
+                    ),
+
             html.H3(children='How to use this app and remove background',
                     id='bg-title'),
             html.Img(id='segmentation-bg',

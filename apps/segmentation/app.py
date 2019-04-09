@@ -76,6 +76,16 @@ app.layout = html.Div([
         ),
     ], className="seven columns"),
     html.Div([
+	html.Img(src='https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png', width='30px'),
+        html.A(
+              id='gh-link',
+              children=[
+                  'View on GitHub'],
+              href="http://github.com/plotly/canvas-portal/"                          			"blob/master/apps/segmentation/app.py",
+              style={'color': 'black',
+                    'border':'solid 1px black',
+                    'float':'left'}
+                    ),
         html.H2(children='Segmentation tool'),
         dcc.Markdown('''
                 Draw on the picture to annotate each object

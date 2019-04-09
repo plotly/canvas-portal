@@ -109,6 +109,17 @@ app.layout = html.Div([
         html.Div(id='sh_x', hidden=True)
     ], className="eight columns"),
     html.Div([
+        html.Img(src='https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png', width='30px'),
+        html.A(
+            id='gh-link',
+            children=[
+                'View on GitHub'],
+            href="http://github.com/plotly/canvas-portal/"
+                          "blob/master/apps/stitch-images/app.py",
+            style={'color': 'black',
+                    'border':'solid 1px black',
+                    'float':'left'}
+                    ),
         html.Label('Number of rows'),
         dcc.Input(
             id='nrows-stitch',
@@ -207,6 +218,8 @@ def upload_content(list_image_string, list_filenames, click,
     elif click:
         import os
         filelist = glob('./assets/tile*.jpg')
+        if not filelist:
+            filelist = glob('/app/apps/stitch-images/assets/tile*.jpg')
         filelist.sort()
         image_list = [io.imread(filename) for filename in filelist[:4]]
         res = tile_images(image_list, n_rows, n_cols)
