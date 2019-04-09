@@ -23,6 +23,7 @@ app.config.suppress_callback_exceptions = True
 # Image to segment and shape parameters
 import os
 print("current directory is", os.getcwd())
+print(os.listdir('.'))
 
 filename = app.get_asset_url('dress.jpg')
 print(filename)
