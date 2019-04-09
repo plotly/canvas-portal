@@ -21,8 +21,11 @@ app = dash.Dash(__name__)
 server = app.server
 app.config.suppress_callback_exceptions = True
 # Image to segment and shape parameters
+import os
+print("current directory is", os.getcwd())
 
 filename = app.get_asset_url('dress.jpg')
+print(filename)
 img_app3 = io.imread(filename)
 height, width, _ = img_app3.shape
 canvas_width = 500
