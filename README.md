@@ -3,7 +3,7 @@
 These apps use the Dash framework and the package dash-canvas for
 annotating images and image processing.
 
-The gallery is deployed on https://dash-playground.plotly.host/Portal.
+The gallery is deployed on https://dash-canvas.plotly.host/Portal.
 
 For local use, each app is a subfolder of ``apps``. Enter one of these
 subfolders, install the requirements with
