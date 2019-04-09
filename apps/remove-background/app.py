@@ -17,18 +17,18 @@ from dash_canvas.utils import (parse_jsonstring,
                               array_to_data_url)
 from dash_canvas.components import image_upload_zone
 
+app = dash.Dash(__name__)
+server = app.server
+app.config.suppress_callback_exceptions = True
 # Image to segment and shape parameters
-filename = './assets/dress.jpg'
-filename_app = '/assets/dress.jpg'
+
+filename = app.get_asset_url('dress.jpg')
 img_app3 = io.imread(filename)
 height, width, _ = img_app3.shape
 canvas_width = 500
 canvas_height = round(height * canvas_width / width)
 scale = canvas_width / width
 
-app = dash.Dash(__name__)
-server = app.server
-app.config.suppress_callback_exceptions = True
 
 app.layout = html.Div([
     html.Div([
