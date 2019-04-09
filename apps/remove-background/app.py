@@ -25,9 +25,8 @@ import os
 print("current directory is", os.getcwd())
 print(os.listdir('.'))
 
-#filename = app.get_asset_url('dress.jpg')
-filename = "/app/apps/remove-background/assets/dress.jpg"
-print(filename)
+filename = "assets/dress.jpg"
+#filename = "/app/apps/remove-background/assets/dress.jpg"
 img_app3 = io.imread(filename)
 height, width, _ = img_app3.shape
 canvas_width = 500
