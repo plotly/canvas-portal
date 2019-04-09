@@ -48,6 +48,19 @@ app.layout = html.Div([
             ),
     ], className="seven columns"),
     html.Div([
+	html.Img(src='https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png', width='30px'),
+	html.A(
+	    id='gh-link',
+	    children=[
+		'View on GitHub'
+	    ],
+	    href="http://github.com/plotly/canvas-portal/"
+                          "blob/master/apps/measure-length/app.py",
+	    style={'color': 'black',
+		    'border':'solid 1px black',
+		    'float':'left'}
+		    ),
+
         html.H3('Draw lines and measure lengths'),
         html.H3(children='How to use this app', id='measure-subtitle'),
         html.Img(id='measure-help',
