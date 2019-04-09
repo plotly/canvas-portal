@@ -1,0 +1,1 @@
+web: gunicorn apps.remove-background.app:server --workers 2

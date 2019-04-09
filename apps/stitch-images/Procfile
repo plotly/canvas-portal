@@ -1,0 +1,1 @@
+web: gunicorn apps.stitch-images.app:server --workers 2
