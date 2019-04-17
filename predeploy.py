@@ -5,6 +5,7 @@ import subprocess
 APPNAME_TO_DIRECTORY = {
     'correct-segmentation': 'correct-segmentation',
     'measure-length': 'measure-length',
+    'object-properties': 'object-properties',
     'remove-background': 'remove-background',
     'segmentation': 'segmentation',
     'stitch-images': 'stitch-images'
