@@ -15,7 +15,7 @@ import pandas as pd
 import PIL
 from skimage import color, img_as_ubyte
 from plotly import colors
-
+from textwrap import dedent
 
 def image_with_contour(img, labels, mode='lines', shape=None):
     """
@@ -146,11 +146,14 @@ app.layout = html.Div([html.Div([
     ], className="six columns"),
     ], className="row"),
     html.H4('How to use this app (see below)'),
-    dcc.Markdown('''
+    dcc.Markdown(dedent('''
     Hover over objects to highlight their properties in the table,
     select cell in table to highlight object in image, or
     filter objects in the table to display a subset of objects.
-    '''
+
+    Learn more about [DataTable filtering syntax](https://dash.plot.ly/datatable/filtering)
+    for selecting ranges of properties.
+    ''')
     ),
     html.Img(id='help', 
              src='assets/properties.gif',
