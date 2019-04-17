@@ -120,6 +120,15 @@ app.layout = html.Div([html.Div([
         figure=image_with_contour(img, labels, mode=None)),
     ], className="six columns"),
     html.Div([
+    html.Img(src='https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png', width='30px'),
+    html.A(
+        id='gh-link',
+        children=['View on GitHub'],
+        href="http://github.com/plotly/canvas-portal/"                                              "blob/master/apps/object-properties/app.py",
+        style={'color': 'black',
+               'border':'solid 1px black',
+               'float':'left'}
+              ),
     dash_table.DataTable(
               id='table-line',
               columns=columns,
