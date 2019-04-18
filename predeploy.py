@@ -3,6 +3,7 @@ import shutil
 import subprocess
 
 APPNAME_TO_DIRECTORY = {
+    'bounding-box': 'bounding-box',
     'correct-segmentation': 'correct-segmentation',
     'measure-length': 'measure-length',
     'object-properties': 'object-properties',
