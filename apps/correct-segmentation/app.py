@@ -152,8 +152,8 @@ def save_segmentation(labs, save_mode):
         new_labels = np.array(labs)
         np.save('labels.npy', new_labels)
         if save_mode == 'png':
-            color_labels = color.label2rgb(new_labels)
-            uri = array_to_data_url(new_labels, dtype=np.uint8)
+            color_labels = 255 * color.label2rgb(new_labels)
+            uri = array_to_data_url(color_labels, dtype=np.uint8)
             return uri
     else:
         raise PreventUpdate
