@@ -13,12 +13,12 @@ from dash_canvas.utils import parse_jsonstring_rectangle
 import dash_table
 from textwrap import dedent
 
-filename = 'https://bestpostarchive.com/wp-content/uploads/2019/02/driving-in-the-streets-of-san-fr-800x445.jpg'
 
 app = dash.Dash(__name__)
 server = app.server
 app.config.suppress_callback_exceptions = True
 
+filename = app.get_asset_url("driving.jpg")
 list_columns = ['width', 'height', 'left', 'top', 'type']
 columns = [{"name": i, "id": i} for i in list_columns]
 columns[-1]['presentation'] = 'dropdown'
@@ -49,14 +49,6 @@ app.layout = html.Div([
               id='table',
               columns=columns,
               editable=True,
-	      column_static_dropdown=[
-            {
-                'id': 'type',
-                'dropdown': [
-                    {'label': i, 'value': i}
-                    for i in ['car', 'truck', 'bike', 'pedestrian']
-                ]
-            }],
               ),
         ], className="six columns")],# Div
     className="row")
